@@ -12,8 +12,8 @@ data: {                                 # Key, Value pairs of StorageFieldName: 
   cameras: {                             # Example of how to construct topic information in the documents
     gripper: {
       color: {
-        image: "/camera/image_raw",
-        intrinsics: "/camera/camera_info",
+        image: "/usb_cam/image_raw",
+        intrinsics: "/usb_cam/camera_info",
       },
     },
   },
