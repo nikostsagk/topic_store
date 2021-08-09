@@ -12,7 +12,7 @@ services:
       - mongodb
 
   mongodb:
-    image: 'mongo:4.2'
+    image: 'arm32v7/mongo:4.2'
     command: 'mongod --storageEngine=wiredTiger'
     expose:
       - '27017'

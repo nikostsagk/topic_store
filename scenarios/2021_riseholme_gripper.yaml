@@ -1,0 +1,24 @@
+# This file serves as documentation for how to construct topic_store scenario files
+#    - A lot of parameters can be deleted but are here to document the possible configurations
+
+context: "2021_riseholme_gripper"                      # Context defines the data collection collection identifier
+
+storage:
+  method: "database"                  # Where to store the data (database or filesystem)
+  config: "/home/pi/catkin_ws/src/topic_store/config/default_db_config.yaml"
+
+
+data: {                                 # Key, Value pairs of StorageFieldName: DesiredData
+  cameras: {                             # Example of how to construct topic information in the documents
+    gripper: {
+      color: {
+        image: "/camera/image_raw",
+        intrinsics: "/camera/camera_info",
+      },
+    },
+  },
+}
+
+collection:                             # These parameters describe the data capture behaviour (when it occurs)
+  method: "event"
+  watch_topic: "/capture_data"
